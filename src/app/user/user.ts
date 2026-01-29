@@ -4,21 +4,12 @@ import { Component, Input, input, computed, Output, EventEmitter, output} from '
 
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
-// type User = {
-//   id: string;
-//   name: string;
-//   avatar: string;
-// };
-
-interface UserProps {
-  id: string;
-  name: string;
-  avatar: string;
-}
+import { UserProps } from './user.model';
+import { Card } from "../shared/card/card";
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [Card],
   templateUrl: './user.html',
   styleUrl: './user.css',
 })
@@ -38,6 +29,7 @@ export class User {
   //  name: string;
   //  avatar: string; 
   // }; 
+  @Input({required: true}) selected!: boolean;
 
   @Output() select = new EventEmitter<string>(); // <== Traditional output approach and adding <string> is a good practice but not required
   // select = output<string>(); // <== New signal-based output approach

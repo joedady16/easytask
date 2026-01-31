@@ -5,11 +5,12 @@ import { Component, Input, input, computed, Output, EventEmitter, output} from '
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 import { UserProps } from './user.model';
-import { Card } from "../shared/card/card";
+//import { Card } from "../shared/card/card";
 
 @Component({
   selector: 'app-user',
-  imports: [Card],
+  standalone: false,
+  // imports: [Card],
   templateUrl: './user.html',
   styleUrl: './user.css',
 })
